@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d1lwx0gsifeu7"]
+
+[ext_resource type="Script" uid="uid://dkbnvesouu3ei" path="res://sword.gd" id="1_74bdg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e4ynd"]
+radius = 53.08484
+
+[node name="sword" type="Area2D" unique_id=459925343]
+script = ExtResource("1_74bdg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=791850522]
+shape = SubResource("CircleShape2D_e4ynd")
+debug_color = Color(0.21365574, 0.5657527, 0.8062668, 0.41960785)
