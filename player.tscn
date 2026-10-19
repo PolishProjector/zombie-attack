@@ -141,8 +141,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_606se")
 }],
-"loop": false,
-"name": &"atack",
+"loop": 0,
+"name": &"attack",
 "speed": 5.0
 }, {
 "frames": [{
@@ -158,7 +158,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pylmc")
 }],
-"loop": false,
+"loop": 0,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -175,7 +175,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7lmhl")
 }],
-"loop": false,
+"loop": 0,
 "name": &"hurt",
 "speed": 5.0
 }, {
@@ -198,7 +198,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ek41f")
 }],
-"loop": false,
+"loop": 0,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -227,7 +227,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_634y6")
 }],
-"loop": false,
+"loop": 0,
 "name": &"walk",
 "speed": 5.0
 }]
@@ -239,7 +239,7 @@ script = ExtResource("1_sweqy")
 position = Vector2(508.99997, 261)
 scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_efrwb")
-animation = &"idle"
+animation = &"attack"
 
 [node name="sword" parent="." unique_id=459925343 instance=ExtResource("7_dw050")]
-position = Vector2(448.75006, 236.25003)
+position = Vector2(502, 254)

@@ -1,8 +1,12 @@
 extends CharacterBody2D
 
+@export var max_hp = 100
+var current_hp = 100
 @onready var anim = $AnimatedSprite2D
-@onready var sword = $Sword
+@onready var sword = $sword
 var speed = 200
+
+signal hp_changed(new_hp)  # <- TO MUSI BYĆ
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2()
@@ -38,8 +42,20 @@ func _physics_process(delta: float) -> void:
 func attack():
 	if anim.animation == "attack":
 		return
-	anim.play("atack")
+		print ("atak")
+	anim.play("attack")
 	sword.enable()
 	await anim.animation_finished
 	sword.disable()
 	anim.play("idle")
+
+
+func take_damage(amount:  int):
+	current_hp -= amount 
+	current_hp = max(current_hp, 0)
+	hp_changed.emit(current_hp)
+	if current_hp <= 0:
+		die()
+		
+func die():
+	print("umarł")
