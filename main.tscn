@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bnhrk8lna5toi"]
+
+[ext_resource type="PackedScene" uid="uid://blnse4g68drc0" path="res://player.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://ckpfpvim8pb1x" path="res://zombie.tscn" id="2_h2yge"]
+
+[node name="main" type="Node2D" unique_id=415072990]
+
+[node name="player" parent="." unique_id=493345309 instance=ExtResource("1_0xm2m")]
+position = Vector2(3, 0)
+
+[node name="zombie" parent="." unique_id=1699543318 instance=ExtResource("2_h2yge")]

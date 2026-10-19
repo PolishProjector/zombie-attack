@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://ckpfpvim8pb1x"]
+
+[ext_resource type="Script" uid="uid://dojwnw1egcotg" path="res://zombie.gd" id="1_roy8y"]
+[ext_resource type="Texture2D" uid="uid://c3m163hnlak01" path="res://Orc.png" id="2_jmu02"]
+[ext_resource type="PackedScene" uid="uid://hjqgftxp4vi6" path="res://hp_bar.tscn" id="3_jmu02"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_roy8y"]
+radius = 62.0
+height = 138.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eseir"]
+atlas = ExtResource("2_jmu02")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nqyo"]
+atlas = ExtResource("2_jmu02")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnshm"]
+atlas = ExtResource("2_jmu02")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5rsa"]
+atlas = ExtResource("2_jmu02")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogcpr"]
+atlas = ExtResource("2_jmu02")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i82o5"]
+atlas = ExtResource("2_jmu02")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jw3ev"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eseir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nqyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnshm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5rsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogcpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i82o5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="zombie" type="CharacterBody2D" unique_id=1699543318 groups=["zombie"]]
+collision_mask = 0
+script = ExtResource("1_roy8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1041203544]
+position = Vector2(120, 120)
+shape = SubResource("CapsuleShape2D_roy8y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1548312138]
+position = Vector2(120, 120)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_jw3ev")
+
+[node name="hp_bar" parent="." unique_id=1402567632 instance=ExtResource("3_jmu02")]

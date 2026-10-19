@@ -2,12 +2,18 @@
 
 [ext_resource type="Script" uid="uid://dkbnvesouu3ei" path="res://sword.gd" id="1_74bdg"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_e4ynd"]
-radius = 53.08484
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74bdg"]
+size = Vector2(105, 26)
 
 [node name="sword" type="Area2D" unique_id=459925343]
+position = Vector2(-2, 4)
+monitoring = false
+monitorable = false
 script = ExtResource("1_74bdg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=791850522]
-shape = SubResource("CircleShape2D_e4ynd")
+position = Vector2(42.5, 3)
+shape = SubResource("RectangleShape2D_74bdg")
 debug_color = Color(0.21365574, 0.5657527, 0.8062668, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
